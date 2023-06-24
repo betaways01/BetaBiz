@@ -2,8 +2,7 @@
 
 A shop keeper's tools for all shop activities
 
-![Alt text](resources\img\flow.png)
-
+![Flow](resources\img\flow.png)
 Step-by-step guide on how to start the project:
 
 1. **Set Up Your Development Environment**: Make sure you have Python installed on your machine. If you don't, you can download it from the official Python website. You'll also need an Integrated Development Environment (IDE) or a text editor. PyCharm and Visual Studio Code are good options.
@@ -29,5 +28,3 @@ Step-by-step guide on how to start the project:
 9. **Test Your Application**: As you're developing your application, make sure to test it regularly. Check that it's adding, updating, and deleting records correctly, and that it's calculating totals correctly. You can write test cases and use a testing framework like pytest to automate your tests.
 
 10. **Iterate and Improve**: Once you have a basic version of your application working, you can start adding more features, such as the ability to generate reports, back up your database, or secure your data.
-
-Remember, this is a complex project and it's okay if it takes some time. Don't be discouraged if you run into problems; debugging is a normal part of programming. Good luck!
