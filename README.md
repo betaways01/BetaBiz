@@ -3,6 +3,7 @@
 A shop keeper's tools for all shop activities
 
 ![Flow](/resources/img/flow.png)
+
 Step-by-step guide on how to start the project:
 
 1. **Set Up Your Development Environment**: Make sure you have Python installed on your machine. If you don't, you can download it from the official Python website. You'll also need an Integrated Development Environment (IDE) or a text editor. PyCharm and Visual Studio Code are good options.
