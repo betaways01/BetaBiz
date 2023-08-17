@@ -1,5 +1,6 @@
 #include <iostream>
 #include "database.hpp"
+#include <string>
 
 sqlite3* connect() {
     sqlite3* db;
@@ -93,7 +94,10 @@ void createTables() {
 }
 
 /*CRUD Implementation*/
-/* Create*/
+/* 
+CREATE
+*/
+/*items*/
 void insertItem(const std::string& itemName, const std::string& units, int numberOfUnits, double wholesalePrice, double retailPrice, double expectedProfit, double percentageProfit) {
     sqlite3* db = connect();
     std::string sql = "INSERT INTO items (itemName, units, numberOfUnits, wholesalePrice, retailPrice, expectedProfit, percentageProfit) VALUES (?, ?, ?, ?, ?, ?, ?);";
@@ -111,7 +115,20 @@ void insertItem(const std::string& itemName, const std::string& units, int numbe
     sqlite3_close(db);
 }
 
-/*Read (select)*/
+/*purchase*/
+
+/*miscellaneous*/
+
+/*cashclosing*/
+
+/*credits*/
+
+/*customers*/
+
+/*
+READ (SELECT)
+*/
+/*items*/
 void getItems() {
     sqlite3* db = connect();
     std::string sql = "SELECT * FROM items;";
@@ -120,14 +137,42 @@ void getItems() {
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         int id = sqlite3_column_int(stmt, 0);
         const unsigned char* itemName = sqlite3_column_text(stmt, 1);
-        // Continue retrieving other columns...
-        std::cout << "Item: " << itemName << std::endl;
+        const unsigned char* units = sqlite3_column_text(stmt, 2);
+        int numberOfUnits = sqlite3_column_int(stmt, 3);
+        double wholesalePrice = sqlite3_column_double(stmt, 4);
+        double retailPrice = sqlite3_column_double(stmt, 5);
+        double expectedProfit = sqlite3_column_double(stmt, 6);
+        double percentageProfit = sqlite3_column_double(stmt, 7);
+
+        std::cout << "ID: " << id
+                  << "\nItem Name: " << itemName
+                  << "\nUnits: " << units
+                  << "\nNumber of Units: " << numberOfUnits
+                  << "\nWholesale Price: " << wholesalePrice
+                  << "\nRetail Price: " << retailPrice
+                  << "\nExpected Profit: " << expectedProfit
+                  << "\nPercentage Profit: " << percentageProfit
+                  << std::endl;
     }
     sqlite3_finalize(stmt);
     sqlite3_close(db);
 }
 
-/*Update*/
+/*purchase*/
+
+/*miscellaneous*/
+
+/*cashclosing*/
+
+/*credits*/
+
+/*customers*/
+
+
+/*
+UPDATE
+*/
+/*items*/
  void updateItem(int id, const std::string& itemName) {
     sqlite3* db = connect();
     std::string sql = "UPDATE items SET itemName = ? WHERE id = ?;";
@@ -139,8 +184,22 @@ void getItems() {
     sqlite3_finalize(stmt);
     sqlite3_close(db);
 }
+ 
+/*purchase*/
 
-/*Delete*/
+/*miscellaneous*/
+
+/*cashclosing*/
+
+/*credits*/
+
+/*customers*/
+
+
+/*
+DELETE
+*/
+/*items*/
 void deleteItem(int id) {
     sqlite3* db = connect();
     std::string sql = "DELETE FROM items WHERE id = ?;";
@@ -152,3 +211,12 @@ void deleteItem(int id) {
     sqlite3_close(db);
 }
 
+/*purchase*/
+
+/*miscellaneous*/
+
+/*cashclosing*/
+
+/*credits*/
+
+/*customers*/
